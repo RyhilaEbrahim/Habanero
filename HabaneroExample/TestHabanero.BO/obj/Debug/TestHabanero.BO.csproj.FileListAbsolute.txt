@@ -13,3 +13,8 @@ C:\Users\ryhila\Documents\Visual Studio 2015\Projects\HabaneroExample\TestHabane
 C:\Users\ryhila\Documents\Visual Studio 2015\Projects\HabaneroExample\TestHabanero.BO\bin\Debug\TestHabanero.BO.pdb
 C:\Users\ryhila\Documents\Visual Studio 2015\Projects\HabaneroExample\TestHabanero.BO\obj\Debug\TestHabanero.BO.dll
 C:\Users\ryhila\Documents\Visual Studio 2015\Projects\HabaneroExample\TestHabanero.BO\obj\Debug\TestHabanero.BO.pdb
+G:\Playground\Habanero\HabaneroExample\TestHabanero.BO\bin\Debug\TestHabanero.BO.dll
+G:\Playground\Habanero\HabaneroExample\TestHabanero.BO\bin\Debug\TestHabanero.BO.pdb
+G:\Playground\Habanero\HabaneroExample\TestHabanero.BO\obj\Debug\TestHabanero.BO.csprojResolveAssemblyReference.cache
+G:\Playground\Habanero\HabaneroExample\TestHabanero.BO\obj\Debug\TestHabanero.BO.dll
+G:\Playground\Habanero\HabaneroExample\TestHabanero.BO\obj\Debug\TestHabanero.BO.pdb

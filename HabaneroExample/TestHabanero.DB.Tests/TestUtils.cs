@@ -1,20 +1,23 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Habanero.BO;
-using Habanero.DB;
+﻿using Castle.Windsor;
+using TestHabanero.Bootstrap;
+using TestHabanero.BO;
 
-namespace TestHabanero.BO.Tests.Util
+namespace TestHabanero.DB.Tests
 {
-    class TestUtils
+    public class TestUtils
     {
+        private static IWindsorContainer _container;
+        public static IWindsorContainer Container { get { return _container; } }
+
         public static void SetupFixture()
         {
-
-            Habanero.BO.BORegistry.DataAccessor = new DataAccessorInMemory();
             BOBroker.LoadClassDefs();
+            ConfigureContainer();
+        }
+        public static void ConfigureContainer()
+        {
+            var diBootstrapper = new WindsorBootstrapper(isUnitTestEnvironment: true);
+            _container = diBootstrapper.BootstrapForTests();
         }
     }
 }

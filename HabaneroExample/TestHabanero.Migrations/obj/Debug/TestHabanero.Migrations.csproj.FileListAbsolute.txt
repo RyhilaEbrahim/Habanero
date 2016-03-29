@@ -28,3 +28,19 @@ C:\Users\ryhila\Documents\Visual Studio 2015\Projects\HabaneroExample\TestHabane
 C:\Users\ryhila\Documents\Visual Studio 2015\Projects\HabaneroExample\TestHabanero.Migrations\bin\Debug\FluentMigrator.Runner.pdb
 C:\Users\ryhila\Documents\Visual Studio 2015\Projects\HabaneroExample\TestHabanero.Migrations\obj\Debug\TestHabanero.Migrations.dll
 C:\Users\ryhila\Documents\Visual Studio 2015\Projects\HabaneroExample\TestHabanero.Migrations\obj\Debug\TestHabanero.Migrations.pdb
+G:\Playground\Habanero\HabaneroExample\TestHabanero.Migrations\bin\Debug\TestHabanero.Migrations.dll.config
+G:\Playground\Habanero\HabaneroExample\TestHabanero.Migrations\bin\Debug\TestHabanero.Migrations.dll
+G:\Playground\Habanero\HabaneroExample\TestHabanero.Migrations\bin\Debug\TestHabanero.Migrations.pdb
+G:\Playground\Habanero\HabaneroExample\TestHabanero.Migrations\bin\Debug\FluentMigrator.dll
+G:\Playground\Habanero\HabaneroExample\TestHabanero.Migrations\bin\Debug\FluentMigrator.Runner.dll
+G:\Playground\Habanero\HabaneroExample\TestHabanero.Migrations\bin\Debug\Habanero.Base.dll
+G:\Playground\Habanero\HabaneroExample\TestHabanero.Migrations\bin\Debug\Habanero.BO.dll
+G:\Playground\Habanero\HabaneroExample\TestHabanero.Migrations\bin\Debug\Habanero.Console.dll
+G:\Playground\Habanero\HabaneroExample\TestHabanero.Migrations\bin\Debug\Habanero.DB.dll
+G:\Playground\Habanero\HabaneroExample\TestHabanero.Migrations\bin\Debug\PeanutButter.FluentMigrator.dll
+G:\Playground\Habanero\HabaneroExample\TestHabanero.Migrations\bin\Debug\FluentMigrator.pdb
+G:\Playground\Habanero\HabaneroExample\TestHabanero.Migrations\bin\Debug\FluentMigrator.xml
+G:\Playground\Habanero\HabaneroExample\TestHabanero.Migrations\bin\Debug\FluentMigrator.Runner.pdb
+G:\Playground\Habanero\HabaneroExample\TestHabanero.Migrations\obj\Debug\TestHabanero.Migrations.csprojResolveAssemblyReference.cache
+G:\Playground\Habanero\HabaneroExample\TestHabanero.Migrations\obj\Debug\TestHabanero.Migrations.dll
+G:\Playground\Habanero\HabaneroExample\TestHabanero.Migrations\obj\Debug\TestHabanero.Migrations.pdb

@@ -9,8 +9,9 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>TestHabanero.DB.Tests</RootNamespace>
     <AssemblyName>TestHabanero.DB.Tests</AssemblyName>
-    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -30,6 +31,14 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Castle.Core, Version=3.3.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
+      <HintPath>..\packages\Castle.Core.3.3.0\lib\net45\Castle.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Castle.Windsor, Version=3.3.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
+      <HintPath>..\packages\Castle.Windsor.3.3.0\lib\net45\Castle.Windsor.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Habanero.Base, Version=3.0.0.0, Culture=neutral, PublicKeyToken=1fb6a9c86f815c07, processorArchitecture=MSIL">
       <HintPath>..\packages\Habanero.3.0.1\lib\Habanero.Base.dll</HintPath>
       <Private>True</Private>
@@ -44,6 +53,18 @@
     </Reference>
     <Reference Include="Habanero.DB, Version=3.0.0.0, Culture=neutral, PublicKeyToken=13cd8e0ef3c14147, processorArchitecture=MSIL">
       <HintPath>..\packages\Habanero.3.0.1\lib\Habanero.DB.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Habanero.Testability, Version=3.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Habanero.Testability.3.0.1\lib\Habanero.Testability.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Habanero.Testability.Helpers, Version=3.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Habanero.Testability.3.0.1\lib\Habanero.Testability.Helpers.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Habanero.Testability.Testers, Version=3.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Habanero.Testability.3.0.1\lib\Habanero.Testability.Testers.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="NSubstitute, Version=1.10.0.0, Culture=neutral, PublicKeyToken=92dd2e9066daa5ca, processorArchitecture=MSIL">
@@ -76,6 +97,10 @@
     <ProjectReference Include="..\TestHabanero.Tests.Commons\TestHabanero.Tests.Commons.csproj">
       <Project>{918B15C2-11A1-478B-979D-3521FAEF63C6}</Project>
       <Name>TestHabanero.Tests.Commons</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TestHabanero\TestHabanero.csproj">
+      <Project>{56AB2AA0-8DA4-4F41-8AF2-AD43E2FB8306}</Project>
+      <Name>TestHabanero</Name>
     </ProjectReference>
     <ProjectReference Include="..\TestHabenaro.Db\TestHabenaro.DB.csproj">
       <Project>{3DE3BF7C-33B4-4B54-8E1E-CF58F637696B}</Project>
