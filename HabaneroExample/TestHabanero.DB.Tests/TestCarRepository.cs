@@ -1,4 +1,9 @@
-﻿using Habanero.BO;
+﻿using System.Collections.Generic;
+using System.Linq;
+using System.Net;
+using AutoMapper;
+using Habanero.BO;
+using NSubstitute;
 using NUnit.Framework;
 using TestHabanero.BO;
 using TestHabanero.Tests.Commons;
@@ -57,12 +62,12 @@ namespace TestHabanero.DB.Tests
             //---------------Set up test pack-------------------
             CreateSavedCar();
             CreateSavedCar();
-            var userRepository = CreateCarRepository();
+            var carRepository = CreateCarRepository();
             //---------------Assert Precondition----------------
             var cars = Broker.GetBusinessObjectCollection<Car>("");
             Assert.AreEqual(2, cars.Count);
             //---------------Execute Test ----------------------
-            var results = userRepository.GetCars();
+            var results = carRepository.GetCars();
             //---------------Test Result -----------------------
             Assert.AreEqual(2, results.Count);
         }
@@ -74,72 +79,77 @@ namespace TestHabanero.DB.Tests
             CreateSavedCar();
             CreateSavedCar();
             CreateSavedCar();
-            var userRepository = CreateCarRepository();
+            var carRepository = CreateCarRepository();
             //---------------Assert Precondition----------------
             var cars = Broker.GetBusinessObjectCollection<Car>("");
             Assert.AreEqual(3, cars.Count);
             //---------------Execute Test ----------------------
-            var results = userRepository.GetCars();
+            var results = carRepository.GetCars();
             //---------------Test Result -----------------------
             Assert.AreEqual(3, results.Count);
         }
 
-       /* [Test]
+        [Test]
         public void GetCarBy_GivenCarId_ShouldReturnCar()
         {
             //---------------Set up test pack-------------------
-            var car = new CarBuilder().WithNewId().Build();
-            var userRepository = Substitute.For<ICarRepository>();
-            var cars = new List<Car> { car };
+            var car = CreateSavedCar();
+            var carRepository = CreateCarRepository();
             //---------------Assert Precondition----------------
             //---------------Execute Test ----------------------
-            userRepository.GetCarBy(car.CarId).Returns(car);
+            var results = carRepository.GetCarBy(car.CarId);
             //---------------Test Result -----------------------
+            Assert.AreEqual(car, results);
+        }
+
+        [Test]
+        public void Save_ShouldSaveCarToRepo()
+        {
+            //---------------Set up test pack-------------------
+            var newCar = new CarBuilder().BuildSaved();
+            var userRepository = Substitute.For<ICarRepository>();
+            //---------------Assert Precondition----------------
+            //---------------Execute Test ----------------------
+            userRepository.Save(newCar);
+            //---------------Test Result -----------------------
+            var cars = Broker.GetBusinessObjectCollection<Car>("");
             Assert.AreEqual(1, cars.Count);
-            var actual = cars.First();
-            Assert.AreSame(car, actual);
+            var car = cars[0];
+            Assert.AreSame(newCar, car);
         }
 
         [Test]
-        public void Save_GivenNewCar_ShouldSave()
+        public void Update_GivenEditedPerson_ShouldUpdatePersonDetails()
         {
             //---------------Set up test pack-------------------
-            var car = new CarBuilder().WithNewId().Build();
-            var userRepository = Substitute.For<ICarRepository>();
+            var savedCar = CreateSavedCar();
+            var repository = CreateCarRepository();
+            var model = Mapper.Map<Car>(savedCar);
+            const string make = "some make";
+            model.Make = make;
+            var carFromRepo = repository.GetCarBy(model.CarId);
             //---------------Assert Precondition----------------
             //---------------Execute Test ----------------------
-            userRepository.Save(car);
+            repository.Update(model, carFromRepo);
             //---------------Test Result -----------------------
-            userRepository.Received().Save(car);
-        }
-
-        [Test]
-        public void Update_GivenExistingCar_ShouldUpdateAndSave()
-        {
-            //---------------Set up test pack-------------------
-            var car = new CarBuilder().WithNewId().Build();
-            var userRepository = Substitute.For<ICarRepository>();
-            userRepository.GetCarBy(car.CarId).Returns(car);
-            //---------------Assert Precondition----------------
-            //---------------Execute Test ----------------------
-            userRepository.Update(car, car);
-            //---------------Test Result -----------------------
-            userRepository.Received().Update(car, car);
+            Assert.IsNotNull(carFromRepo);
+            Assert.AreEqual(make, carFromRepo.Make);
         }
 
         [Test]
         public void Delete_GivenExistingCar_ShouldDeleteAndSave()
         {
             //---------------Set up test pack-------------------
-            var car = new CarBuilder().WithNewId().Build();
-            var userRepository = Substitute.For<ICarRepository>();
-            userRepository.GetCarBy(car.CarId).Returns(car);
+            var car = CreateSavedCar();
+            var userRepository = CreateCarRepository();
             //---------------Assert Precondition----------------
+            var cars = Broker.GetBusinessObjectCollection<Car>("");
+            Assert.AreEqual(1, cars.Count);
             //---------------Execute Test ----------------------
             userRepository.Delete(car);
             //---------------Test Result -----------------------
-            userRepository.Received().Delete(car);
-        }*/
+            Assert.AreEqual(0, cars.Count);
+        }
 
         public static Car CreateSavedCar()
         {

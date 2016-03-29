@@ -26,11 +26,12 @@ namespace TestHabenaro.DB
 
         public void Update(Car existingCar, Car newCar)
         {
+            if (existingCar == null) throw new ArgumentNullException(nameof(existingCar));
             existingCar.Make = newCar.Make;
             existingCar.Model = newCar.Model;
             existingCar.Save();
         }
-
+        
         public void Delete(Car car)
         {
             car.MarkForDelete();

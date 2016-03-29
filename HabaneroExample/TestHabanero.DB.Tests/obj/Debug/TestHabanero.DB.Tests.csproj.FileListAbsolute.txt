@@ -219,3 +219,5 @@ G:\Playground\Habanero\HabaneroExample\TestHabanero.DB.Tests\obj\Debug\TestHaban
 G:\Playground\Habanero\HabaneroExample\TestHabanero.DB.Tests\obj\Debug\TestHabanero.DB.Tests.pdb
 G:\Playground\Habanero\HabaneroExample\TestHabanero.DB.Tests\bin\Debug\Habanero.Testability.Helpers.dll
 G:\Playground\Habanero\HabaneroExample\TestHabanero.DB.Tests\bin\Debug\Habanero.Testability.Testers.dll
+G:\Playground\Habanero\HabaneroExample\TestHabanero.DB.Tests\bin\Debug\AutoMapper.Net4.dll
+G:\Playground\Habanero\HabaneroExample\TestHabanero.DB.Tests\bin\Debug\AutoMapper.Net4.pdb
